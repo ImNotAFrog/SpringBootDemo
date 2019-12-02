@@ -1,0 +1,6 @@
+冲突示例
+随便粘贴一些代码
+public void main(String[] args){
+  System.out.println("hello")；
+ }
+ 
