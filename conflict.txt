@@ -1,1 +1,7 @@
+
+随便写些什么内容
+粘贴一段代码
+public void main(String[] args){
+  System.out.println("hello world");
+}
 文件冲突解决
