@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.swjtuhc.demo.mapper.MovieMapper">
+	<resultMap type="edu.swjtuhc.demo.model.Movie" id="movie_result">
+		<id column="m_id" property="mId" javaType="java.lang.Integer" jdbcType="INTEGER"/>
+		<result column="movie_name" property="movieName" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="release_date" property="releaseDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+		<result column="director" property="director" javaType="java.lang.String" jdbcType="VARCHAR"/>
+		<result column="poster" property="poster" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	
+	<select id="selectAllMovies" resultMap="movie_result">
+		select * from movies
+	</select>
+	
+	<insert id="insertMovie" parameterType="edu.swjtuhc.demo.model.Movie">
+		insert into movies
+		(movie_name,release_date,director,poster)
+		values
+		(#{movieName},#{releaseDate},#{director},#{poster})
+	</insert>
+
+</mapper>
